@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>津达线缆</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <link rel="shortcut icon" type="image/x-icon" href="static/WechatIMG18.ico">
+    <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+    <script src="static/jquery-1.9.1.min.js"></script>
+    <!--<script src="http://web.mobookapp.com/jindaimg/slide.js"></script>-->
+    <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=1.3&ak=5goyftuyiCpGpBfpYBxmVzQGMlsErMsW"></script>-->
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=AMsM2RfkVljqqii0Ao3PS2N0t1HSsYU4"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=zishHhU993mnCRDS3zncmazHuZkIRfti&callback=createMap"></script>-->
+    <!--<link rel="shortcut icon" type="image/x-icon" href="static/jquery-sliding-menu.js">-->
+    <!--<link rel="shortcut icon" type="image/x-icon" href="static/flexble.js">-->
+    <!--<link rel="shortcut icon" type="image/x-icon" href="static/index.js"> -->
+    <style>
+      /**{*/
+        /*margin: 0;*/
+        /*padding: 0;*/
+        /*box-sizing: border-box;*/
+      /*}*/
+      /*ul,ol {*/
+        /*list-style: none;*/
+      /*}*/
+      /*ul li {*/
+        /*display: inline;*/
+      /*}*/
+
+
+
+      /*body{*/
+        /*margin:0;*/
+      /*}*/
+      /*body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }*/
+      /*body, button, input, select, textarea {*/
+        /*font:12px/1.5tahoma, arial, \5b8b\4f53;*/
+      /*}*/
+      /*h1, h2, h3, h4, h5, h6{ font-size:100%; }*/
+      /*address, cite, dfn, em, var { font-style:normal; }*/
+      /*code, kbd, pre, samp { font-family:couriernew, courier, monospace; }*/
+      /*small{ font-size:12px; }*/
+      /*ul, ol { list-style:none; }*/
+      /*a { text-decoration:none; }*/
+      /*a:hover { text-decoration:underline; }*/
+      /*sup { vertical-align:text-top; }*/
+      /*sub{ vertical-align:text-bottom; }*/
+      /*legend { color:#000; }*/
+      /*fieldset, img { border:0; }*/
+      /*button, input, select, textarea { font-size:100%; }*/
+      /*table { border-collapse:collapse; border-spacing:0; }*/
+      #box {
+        /*background: radial-gradient(#eeeeee, #444444);*/
+        background: gray;
+        width: 100%;
+        height: 100%;
+        z-index: 100000;
+        background: #fff;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        margin-left: 50%;
+      }
+      #box .loader {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        top: 30%;
+        margin: auto;
+        width: 60px;
+        height: 26px;
+      }
+      #box .loader span {
+        display: block;
+        background: #ccc;
+        width: 7px;
+        height: 10%;
+        border-radius: 14px;
+        margin-right: 5px;
+        float: left;
+        margin-top: 25%;
+      }
+      #box .loader span:last-child {
+        margin-right: 0px;
+      }
+      #box .loader span:nth-child(1) {
+        animation: load 2.5s 1.4s infinite linear;
+      }
+      #box .loader span:nth-child(2) {
+        animation: load 2.5s 1.2s infinite linear;
+      }
+      #box .loader span:nth-child(3) {
+        animation: load 2.5s 1s infinite linear;
+      }
+      #box .loader span:nth-child(4) {
+        animation: load 2.5s 0.8s infinite linear;
+      }
+      #box .loader span:nth-child(5) {
+        animation: load 2.5s 0.6s infinite linear;
+      }
+      #box .loader span:nth-child(6) {
+        animation: load 2.5s 0.4s infinite linear;
+      }
+      #box .loader span:nth-child(7) {
+        animation: load 2.5s 0.2s infinite linear;
+      }
+      #box .loader span:nth-child(8) {
+        animation: load 2.5s 0s infinite linear;
+      }
+      #box .loader span:nth-child(9) {
+        animation: load 2.5s 0.2s infinite linear;
+      }
+      #box .loader span:nth-child(10) {
+        animation: load 2.5s 0.4s infinite linear;
+      }
+      #box .loader span:nth-child(11) {
+        animation: load 2.5s 0.6s infinite linear;
+      }
+      #box .loader span:nth-child(12) {
+        animation: load 2.5s 0.8s infinite linear;
+      }
+      #box .loader span:nth-child(13) {
+        animation: load 2.5s 1s infinite linear;
+      }
+      #box .loader span:nth-child(14) {
+        animation: load 2.5s 1.2s infinite linear;
+      }
+      #box .loader span:nth-child(15) {
+        animation: load 2.5s 1.4s infinite linear;
+      }
+      @keyframes load {
+        0% {
+          background: #ccc;
+          margin-top: 25%;
+          height: 10%;
+        }
+        50% {
+          background: #84CAED;
+          height: 100%;
+          margin-top: 0%;
+        }
+        100% {
+          background: #2298D2;
+          height: 10%;
+          margin-top: 25%;
+        }
+      }
+
+
+      .fixed {
+        width: 2.5rem;
+        height: 2rem;
+        cursor: pointer;
+        position: fixed;
+        top: 82%;
+        left: -2.5rem;
+        z-index: 9999999;
+      }
+      .fixed>img {
+        width: 100%;
+        height: auto;
+      }
+      .fixeds {
+        width: 0.7rem;
+        height: 1.4rem;
+        cursor: pointer;
+        position: fixed;
+        top: 80%;
+        left: 0rem;
+        z-index: 9999999;
+      }
+      .fixeds>img {
+        width: 100%;
+        height: auto;
+      }
+      .fixedst {
+        display: none;
+      }
+      @media(min-width:360px) and (max-width:450px) {
+        .fixeds {
+          display: none;
+        }
+        .fixedst {
+          width: 1.5rem;
+          height: 1.4rem;
+          cursor: pointer;
+          position: fixed;
+          top: 80%;
+          left: 0rem;
+          z-index: 9999999;
+        }
+        .fixedst{
+          display: block;
+        }
+        .fixedst>a>img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--<div class="fixed"><img src="require('../assets/img/tonghua.png')" alt=""></div>-->
+    <div class="fixed"><img src="https://www.jinda365.com/39e33eb02a736bfc7d7c8c0272e03c5.png" alt=""></div>
+    <div class="fixeds p_one"><img src="https://jindawebsitdonotdelete.oss-cn-beijing.aliyuncs.com/WEBSITEPIC/Group%2B14%406x.png" alt=""></div>
+    <div class="fixedst p_two"><a href="tel:02263290777"><img src="https://jindawebsitdonotdelete.oss-cn-beijing.aliyuncs.com/WEBSITEPIC/Group%2B14%406x.png" alt=""></a></div>
+    <div id="app"></div>
+
+    <script>
+      $(function () {
+        $('.fixed').hover(function () {
+          $('.fixeds').animate({left: '0rem'}, 1000)
+          $(this).animate({left: '-2.5rem'})
+        }, function () {
+        })
+        $('.fixeds').hover(function () {
+        }, function () {
+          $(this).animate({left: '-2rem'})
+          $('.fixed').animate({left: '0rem'}, 1000)
+        })
+      })
+    </script>
+    <script>
+      var DEFAULT_VERSION = 10.0
+      var ua = navigator.userAgent.toLowerCase()
+      var isIE = ua.indexOf("msie")>-1
+      var safariVersion
+      if(isIE){
+        safariVersion =  ua.match(/msie ([\d.]+)/)[1]
+      }
+      if(safariVersion <= DEFAULT_VERSION ){
+        alert('系统检测到您正在使用ie10以下内核的浏览器，不能实现完美体验，请更换或升级浏览器访问！')
+      };
+    </script>
+    <script class="zhiCustomBtn" id="zhichiScript" src="https://www.sobot.com/chat/frame/js/entrance.js?sysNum=6852fef4e0fc479fa3c15bc6e8f5f243"></script>
+  </body>
+</html>
