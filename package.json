@@ -18,7 +18,7 @@
     "classlist-polyfill": "^1.2.0",
     "hchs-vue-charts": "^1.2.8",
     "iview": "^3.1.4",
-    "jquery": "^2.2.3",
+    "jquery": "^3.5.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "moment": "^2.20.1",
